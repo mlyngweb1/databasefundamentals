@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+    </style>
+  </head>
+
+  <body>
+    
+    
+
+    <div class="ui fixed top pointing inverted stackable menu labmenu">
+      <header class="header item">
+        <i id="toc" class="sitemap icon"></i>
+        <a href="../index.html">
+          SQL 
+        </a>
+      </header>
+      <div class="right tab-menu menu">
+        
+          <a class="item" data-tab="Lab-01 SQL 1">
+            Lab-01 SQL 1
+          </a>
+        
+          <a class="item" data-tab="01">
+            01
+          </a>
+        
+          <a class="item" data-tab="02">
+            02
+          </a>
+        
+          <a class="item" data-tab="03">
+            03
+          </a>
+        
+          <a class="item" data-tab="04">
+            04
+          </a>
+        
+          <a class="item" data-tab="05">
+            05
+          </a>
+        
+          <a class="item" data-tab="06">
+            06
+          </a>
+        
+        <div class="item">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="ui segment pushable">
+      <div class="ui inverted labeled icon left inline vertical sidebar menu">
+        <br><br>
+        
+          
+            <a class="active item" href="../../topic-00-SQL/book-a/index.html">
+              Lab-01 SQL 1
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-b/index.html">
+              Lab-01 SQL 2
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-c/index.html">
+              Lab-01 SQL 3
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-d/index.html">
+              Lab-01 SQL 4
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-e/index.html">
+              Lab-01 SQL 5
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-f/index.html">
+              Lab-01 SQL 6
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-g/index.html">
+              Lab-01 SQL 7
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-h/index.html">
+              Lab-01 SQL 8
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-i/index.html">
+              Lab-01 SQL 9
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-j/index.html">
+              Lab-01 SQL 10
+            </a>
+          
+        
+      </div>
+      <div class="pusher" tabindex="-1">
+        <div class="ui basic segment" id="labchat">
+          <br>
+          
+            <div  class="ui tab segment lab" data-tab="Lab-01 SQL 1">
+              <h1>Objectives</h1>
+<p>In this lab we will learn about the basics of SQL and are introduced to the SELECT statement</p>
+<ul>
+<li>Understand what SQL is</li>
+<li>Understand a database table is</li>
+<li>Describe a table structure</li>
+<li>Select statement syntax</li>
+<li>Retrieve all records in a table</li>
+</ul>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="01">
+              <h1>What is SQL?</h1>
+<p>SQL (sometimes pronounced SEQUEL) stands for Structured Query Language. SQL is used to communicate with a database. According to ANSI (American National Standards Institute), it is the standard language for relational database management systems. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database. Some common relational database management systems that use SQL are: Oracle, Sybase, Microsoft SQL Server, Access, Ingres, etc. Although most database systems use SQL, most of them also have their own additional proprietary extensions that are usually only used on their system. However, the standard SQL commands such as &quot;Select&quot;, &quot;Insert&quot;, &quot;Update&quot;, &quot;Delete&quot;, &quot;Create&quot;, and &quot;Drop&quot; can be used to accomplish almost everything that one needs to do with a database.</p>
+<h2>Table Basics</h2>
+<p>A relational database system contains one or more objects called <em>tables</em>. The data or information for the database are stored in these tables. 
+Tables are uniquely identified by their <em>name</em> and are comprised of <em>columns</em> and <em>rows</em>. Columns contain the column name, data type, and any other attributes 
+for the column. Rows contain the records or data for the columns. Here is a sample table called &quot;weather&quot;.
+The values city, state, high, and low are the columns. The rows contain the data for this table:</p>
+<p><img src="img/table.png" alt=""></p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="02">
+              <h1>Our example - Library system</h1>
+<p>We have built a <a href="archives/library.zip">library database</a> with the following tables: <em>book</em>, <em>bookcopy</em>, <em>student</em>, <em>loan</em>, <em>author</em> and <em>authorship</em>. </p>
+<p>The tables are populated and we will use this data in our queries. The schema is stored in <strong>library_script.sql</strong>.</p>
+<ul>
+<li>Open <em>MySQL Workbench</em> and log in using password root. </li>
+</ul>
+<p>To run the script:</p>
+<ul>
+<li>Under the <em>File</em> menu, choose <em>Run SQL Script …</em>. </li>
+<li>When the dialog box opens, select <em>library_script.sql</em>. </li>
+<li>Click the button <em>Open</em> and on the next dialog box, click <em>Run</em>.  </li>
+<li>When the Operation has run successfully, click Close.</li>
+</ul>
+<p>Alternatively:</p>
+<ul>
+<li>Choose <em>Open SQL Script …</em>. </li>
+<li>When the dialog box opens, select <em>library_script.sql</em>. </li>
+<li>Click the button <em>Open</em>. This will open the script in a new tab. </li>
+<li>To execute the script, choose the third option on the window.  </li>
+</ul>
+<p><img src="img/dialog.png" alt=""></p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="03">
+              <h1>Describing Data</h1>
+<p>Before you work with a database you must specify the database (by name) that you want to work with. </p>
+<p>Enter the following command:</p>
+<pre><code>USE LIBRARY;</code></pre>
+<p>We have already set up tables for our library system. If you want to see their structure, use:</p>
+<pre><code>DESCRIBE &#39;tablename&#39;;</code></pre>
+<p>Or</p>
+<pre><code>DESC &#39;tablename&#39;;</code></pre>
+<h2>Example</h2>
+<pre><code>DESC book;</code></pre>
+<p>This will return a description of the <em>book</em> table including field names and their corresponding data types.</p>
+<h2>To Do:</h2>
+<p>Now, describe the other tables.</p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="04">
+              <h1>The SELECT statement</h1>
+<style>
+table.mine {
+    border-collapse:collapse;
+    border: 1px solid black;
+    width:50%;
+}
+
+td.mine2 {
+    border: 1px solid black;
+    padding: 0.2em;
+}
+</style>
+
+<p>The select statement is used to query the database and retrieve selected data that match the criteria that you specify. 
+The data returned is stored in a result table, called the <em>result-set</em>. Here is the format of a simple select statement:</p>
+<pre><code>  SELECT [DISTINCT|ALL]{*|[columnExpression [AS newName]][,...]}
+  FROM Tablename [alias] 
+  [JOIN Tablename ON ...]
+  [WHERE condition]
+  [GROUP BY columnlist][HAVING condition]
+  [ORDER BY columnList];</code></pre>
+<p><em>Note:</em> [] = optional</p>
+<ul>
+<li><em>columnExpression</em> represents a column name or an expression.</li>
+<li><em>TableName</em> is the name of an existing database table or view that you have access to, and <em>alias</em> is an optional abbreviation for <em>TableName</em>.</li>
+<li>The sequence of processing in a SELECCT statement is:</li>
+</ul>
+<p><table class="mine"></p>
+<p><tr><td class = "mine2" >SELECT</td><td class = "mine2" >specifies which columns are to appear in the output</td></tr></p>
+<p><tr><td class = "mine2" >FROM</td><td class = "mine2" >specifies the table to be used</td></tr></p>
+<p><tr><td class = "mine2" >JOIN</td><td class = "mine2" >specifies the table(s) to be joined with the table in the FROM</td></tr></p>
+<p><tr><td class = "mine2" >WHERE</td><td class = "mine2" >filters the rows subject to some condition(s)</td></tr></p>
+<p><tr><td class = "mine2" >GROUP BY</td><td class = "mine2" >forms groups of rows with the same column name</td></tr></p>
+<p><tr><td class = "mine2" >HAVING</td><td class = "mine2" >filters the groups subject to some condition(s)</td></tr></p>
+<p><tr><td class = "mine2" >ORDER BY</td><td class = "mine2" >specifies the order of the output</td></tr>
+</table>
+The order of the clauses in the SELECT statement <strong>cannot</strong> be changed.The only two mandatory  clauses are the first two: SELECT and FROM; the remainder
+are optional.</p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="05">
+              <h1>Simple Select examples</h1>
+<style>
+table.mine {
+    border-collapse:collapse;
+    border: 1px solid black;
+    width:30%;
+}
+
+td.mine2 {
+    border: 1px solid black;
+    padding: 0.2em;
+}
+</style>
+
+<p>As we know, the select statement is used to query the database and retrieve selected data that match the criteria that you specify.</p>
+<p>Conditional selections used in the where clause:</p>
+<table class="mine">
+<tr><td class = "mine2" >=</td><td class = "mine2" >Equal</td></tr>
+<tr><td class = "mine2" >&gt;</td><td class = "mine2" >Greater than</td></tr>
+<tr><td class = "mine2" >&lt;</td><td class = "mine2" >Less than</td></tr>
+<tr><td class = "mine2" >&gt;=</td><td class = "mine2" >Greater than or equal</td></tr>
+<tr><td class = "mine2" >&lt;=</td><td class = "mine2" >Less than or equal</td></tr>
+<tr><td class = "mine2" >&lt;&gt;</td><td class = "mine2" >Not equal</td></tr>
+<tr><td class = "mine2" >!=</td><td class = "mine2" >Not equal</td></tr>
+</table>
+
+<h2>Examples</h2>
+<pre><code>SELECT * FROM book;</code></pre>
+<p>This will return all records with all columns included.</p>
+<pre><code>SELECT title, publisher FROM book;</code></pre>
+<p>This will return a subset of columns. This query will return all records with just 2 columns (title and publisher) included.</p>
+<pre><code>SELECT title FROM book WHERE publisher = &#39;Addison Wesley&#39;;</code></pre>
+<p>This will return a subset of records only. Records will only be selected if the publisher value is equal to Addison Wesley. When these records are selected (in memory) the column title is then returned.</p>
+<h3>Practice: Try out all the examples yourself</h3>
+<p>Enter the following sample select statements, one at a time to see what is returned:</p>
+<pre><code>SELECT * FROM student; 
+SELECT fname, lname FROM student; 
+SELECT * FROM student WHERE county = &#39;Waterford&#39;;</code></pre>
+<h2>Exercises</h2>
+<ol>
+<li><p>Display the full name and full address for every student that&#39;s in the table.</p>
+<p><img src="img/ans1.png" alt=""> </p>
+</li>
+<li><p>Display the first name, last name, and county for everyone that&#39;s not from Waterford.</p>
+<p><img src="img/ans2.png" alt=""> </p>
+</li>
+<li><p>Display all columns for every student that is in first year.</p>
+<p><img src="img/ans3.png" alt=""></p>
+</li>
+</ol>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="06">
+              <h1>More on Select</h1>
+<p>To change the column heading returned, we can use <em>AS</em>:</p>
+<pre><code>SELECT fname AS &#39;First Name&#39;, lname AS &#39;Last Name&#39; FROM student;</code></pre>
+<p>OR</p>
+<pre><code>SELECT fname &#39;First Name&#39;, lname &#39;Last Name&#39; FROM student;</code></pre>
+<p>To concatenate (join) two (or more) columns together use CONCAT as follows:</p>
+<pre><code>SELECT concat(fname, &#39; &#39;, lname) AS Name FROM Student;</code></pre>
+<p>The result of concatenating two character strings is another character string. With the concat feature, we are usually joining fieldnames and 
+separation characters (such as a hyphen (<code>-</code>) or a colon (:) or a space ( )). Use a comma to separate each element.</p>
+<h2>Distinct</h2>
+<p>Enter the following:</p>
+<pre><code>SELECT publisher FROM book;</code></pre>
+<p>This returns the publisher for each book record, so you will see values repeated. But if we only want to know the list of publishers that we are using at 
+any one time, we do not want to see for example <em>Addison Wesley</em> more than once.</p>
+<p>To eliminate duplicates, use  the keyword <strong>DISTINCT</strong>. Now enter the following:</p>
+<pre><code>SELECT DISTINCT publisher FROM book;</code></pre>
+<p>Notice the difference in the number of returned values.</p>
+<h2>Exercises</h2>
+<ol>
+<li><p>Display the title of all books that are categorised as Computing. Output the result as Computing Titles.</p>
+<p><img src="img/ans4.png" alt=""> </p>
+</li>
+<li><p>Display the counties that the students come from. Output the result as Student County. List each county only once.</p>
+<p><img src="img/ans5.png" alt=""> </p>
+</li>
+<li><p>Display the student id, first name and last name for all students that are on course wd155. Concatenate first name and last name together and output the value as Student Name.</p>
+<p><img src="img/ans6.png" alt=""> </p>
+</li>
+<li><p>Return the first name, last name and Street for all Students from Tramore. Output the student name concatenated and labelled as Name.</p>
+<p><img src="img/ans7.png" alt=""> </p>
+</li>
+<li><p>Retrieve the titles of all books published by Sitepoint. Label the returned titles as &#39;Sitepoint books&#39;.</p>
+<p><img src="img/ans8.png" alt=""> </p>
+</li>
+</ol>
+
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+</html>

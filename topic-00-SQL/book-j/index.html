@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+    </style>
+  </head>
+
+  <body>
+    
+    
+
+    <div class="ui fixed top pointing inverted stackable menu labmenu">
+      <header class="header item">
+        <i id="toc" class="sitemap icon"></i>
+        <a href="../index.html">
+          SQL 
+        </a>
+      </header>
+      <div class="right tab-menu menu">
+        
+          <a class="item" data-tab="Lab-01 SQL 10">
+            Lab-01 SQL 10
+          </a>
+        
+          <a class="item" data-tab="01">
+            01
+          </a>
+        
+          <a class="item" data-tab="02">
+            02
+          </a>
+        
+          <a class="item" data-tab="03">
+            03
+          </a>
+        
+        <div class="item">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="ui segment pushable">
+      <div class="ui inverted labeled icon left inline vertical sidebar menu">
+        <br><br>
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-a/index.html">
+              Lab-01 SQL 1
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-b/index.html">
+              Lab-01 SQL 2
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-c/index.html">
+              Lab-01 SQL 3
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-d/index.html">
+              Lab-01 SQL 4
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-e/index.html">
+              Lab-01 SQL 5
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-f/index.html">
+              Lab-01 SQL 6
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-g/index.html">
+              Lab-01 SQL 7
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-h/index.html">
+              Lab-01 SQL 8
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-i/index.html">
+              Lab-01 SQL 9
+            </a>
+          
+        
+          
+            <a class="active item" href="../../topic-00-SQL/book-j/index.html">
+              Lab-01 SQL 10
+            </a>
+          
+        
+      </div>
+      <div class="pusher" tabindex="-1">
+        <div class="ui basic segment" id="labchat">
+          <br>
+          
+            <div  class="ui tab segment lab" data-tab="Lab-01 SQL 10">
+              <h1>Objectives</h1>
+<p>In this lab, you can practice Data Defintion and Data Manipulation statements.</p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="01">
+              <h1>Database Schema</h1>
+<h2>Team</h2>
+<ul>
+<li>teamId integer</li>
+<li>teamname variable character, size 30</li>
+<li>city variable character, size 20</li>
+<li>ground variable character, size 25</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>teamId is the primary key and is auto_increment. </li>
+<li>teamname is unique and not null. </li>
+<li>city and ground are not null also.</li>
+</ul>
+<h2>Player</h2>
+<ul>
+<li>playerId integer</li>
+<li>fname variable character, size 20</li>
+<li>lname variable character, size 20</li>
+<li>position variable character, size 10</li>
+<li>height tiny integer and is unsigned</li>
+<li>weight small integer and is unsigned</li>
+<li>salary decimal, size 8 including 2 decimal places and is unsigned</li>
+<li>teamId integer</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>playerID is the primary key and is auto_increment. </li>
+<li>fname, lname, height, weight and salary are not null. </li>
+<li>The height of a player is in inches while the weight is in pounds. </li>
+<li>The teamId field is a foreign key to Team. If a teamId is updated in parent (Team) table, the teamId in the child table (Player) is also updated. If a teamId is deleted in parent (Team) table, the teamId in the child table (Player) is updated to null. </li>
+</ul>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="02">
+              <h1>Setting up the Database</h1>
+<ol>
+<li><p>Create a new database called <code>Soccer</code>.</p>
+</li>
+<li><p>Create each table.</p>
+</li>
+<li><p>Insert records into each table as follows:</p>
+</li>
+</ol>
+<pre><code>insert into team(teamname, city, ground) values
+(&#39;Arsenal&#39;, &#39;London&#39;, &#39;Emirates&#39;),
+(&#39;Liverpool FC&#39;, &#39;Liverpool&#39;, &#39;Anfield&#39;),
+(&#39;Everton&#39;, &#39;Liverpool&#39;, &#39;Goodison&#39;),
+(&#39;Tottenham Hotspur&#39;, &#39;London&#39;,&#39;White Hart Lane&#39;),
+(&#39;Manchester United&#39;, &#39;Manchester&#39;,&#39;Old Trafford&#39;),
+(&#39;Manchester City&#39;, &#39;Manchester&#39;,&#39;Etihad&#39;);</code></pre>
+<pre><code>insert into player(fname, lname, position, height, weight, salary, teamId) values
+(&#39;Zlatan&#39;, &#39;Ibrahimovic&#39;, &#39;Forward&#39;, 77, 210, 367640, 5),
+(&#39;Paul&#39;, &#39;Pogba&#39;, &#39;Midfielder&#39;, 75, 190, 290000, 5),
+(&#39;David&#39;,&#39;De Gea&#39;, &#39;Goalkeeper&#39;, 76, 170, 200000, 5),
+
+(&#39;Sergio&#39;, &#39;Aguerro&#39;, &#39;Forward&#39;, 68, 152, 220000, 6),
+(&#39;Gabriel&#39;, &#39;Jesus&#39;, &#39;Forward&#39;, 69, 160, 70000, 6),
+(&#39;Kyle&#39;,&#39;Walker&#39;, &#39;Defender&#39;, 70, 180, 100000, 6),
+
+(&#39;Philippe&#39;, &#39;Coutinho&#39;, &#39;Midfielder&#39;, 67, 150, 150000, 2),
+(&#39;Emre&#39;, &#39;Can&#39;, &#39;Midfielder&#39;, 72, 181, 55000, 2),
+(&#39;Mohamed&#39;,&#39;Salah&#39;, &#39;Winger&#39;, 69, 157, 90000, 2),
+
+(&#39;Harry&#39;, &#39;Kane&#39;, &#39;Forward&#39;, 74, 190, 100000, 4),
+(&#39;Christian&#39;,&#39;Eriksen&#39;, &#39;Midfielder&#39;, 72, 157, 75000, 4),
+
+(&#39;Olivier&#39;, &#39;Giroud&#39;, &#39;Forward&#39;, 76, 190, 100000, 1),
+(&#39;Petr&#39;,&#39;Cech&#39;, &#39;Goalkeeper&#39;, 77, 200, 100000, 1);</code></pre>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="03">
+              <h1>Data Manipulation</h1>
+<ol>
+<li><p>Change the ground value for <em>Tottenham Hotspur</em> to <em>Wembley</em>.</p>
+</li>
+<li><p>Delete the player identified by <em>6</em>.</p>
+</li>
+<li><p>Return the full name (combined and labelled Name), team name, ground, and city for all players. Order by team name, then lname, then fname. Use labels as specified in the answer given.</p>
+<p><img src="img/sol1.png" alt=""></p>
+</li>
+<li><p>Return the full name (combined and labelled Name), and team name for all players who play for London teams. Order by team name, then lname, then fname. Use labels as specified in the answer given.</p>
+<p><img src="img/sol2.png" alt=""></p>
+</li>
+<li><p>Return the full name (combined and labelled Name), team name, ground, and city for all teams (even if they have no players). Order by team name, then lname, then fname. Use labels as specified in the answer given.</p>
+<p><img src="img/sol3.png" alt=""></p>
+</li>
+</ol>
+
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+</html>

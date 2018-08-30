@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+    </style>
+  </head>
+
+  <body>
+    
+    
+
+    <div class="ui fixed top pointing inverted stackable menu labmenu">
+      <header class="header item">
+        <i id="toc" class="sitemap icon"></i>
+        <a href="../index.html">
+          SQL 
+        </a>
+      </header>
+      <div class="right tab-menu menu">
+        
+          <a class="item" data-tab="Lab-01 SQL 4">
+            Lab-01 SQL 4
+          </a>
+        
+          <a class="item" data-tab="Movies Exercise">
+            Movies Exercise
+          </a>
+        
+        <div class="item">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="ui segment pushable">
+      <div class="ui inverted labeled icon left inline vertical sidebar menu">
+        <br><br>
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-a/index.html">
+              Lab-01 SQL 1
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-a1/index.html">
+              Lab-01 SQL 2
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-b/index.html">
+              Lab-01 SQL 3
+            </a>
+          
+        
+          
+            <a class="active item" href="../../topic-00-SQL/book-b1/index.html">
+              Lab-01 SQL 4
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-c/index.html">
+              Lab-01 SQL 5
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-d/index.html">
+              Lab-01 SQL 6
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-d1/index.html">
+              Lab-01 SQL 7
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-e/index.html">
+              Lab-01 SQL 8
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-f/index.html">
+              Lab-01 SQL 9
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-g/index.html">
+              Lab-01 SQL 7
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-h/index.html">
+              Lab-01 SQL 8
+            </a>
+          
+        
+      </div>
+      <div class="pusher" tabindex="-1">
+        <div class="ui basic segment" id="labchat">
+          <br>
+          
+            <div  class="ui tab segment lab" data-tab="Lab-01 SQL 4">
+              <h1>Objectives</h1>
+<p>In this lab you will practice the SELECT statement on a new database</p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="Movies Exercise">
+              <h1>Exercise</h1>
+<ul>
+<li>Download and open the <a href="archives/Movies.zip">Movie</a> script (as an SQL file). </li>
+<li>The <em>Movies</em> database has 3 tables: <em>film</em>, <em>reviewer</em>, and <em>rating</em>.</li>
+<li>Open the SQL script in MySQL Workbench.</li>
+<li>Open a new tab and save it as Review Exercise. Enter (and execute) the following commands:</li>
+</ul>
+<pre><code>USE MOVIES; /*Select the Movies database*/</code></pre>
+<pre><code>SHOW TABLES; /*List all the tables*/</code></pre>
+<p>To do:</p>
+<ol>
+<li><p>Describe each table.</p>
+</li>
+<li><p>Find the titles of all films directed by Steven Spielberg.</p>
+</li>
+<li><p>Return the title and year of all films produced from 1940 to 1990. Sort by title.</p>
+</li>
+<li><p>Return the title and length of all films whose length is 110 minutes or more. Sort by title.</p>
+</li>
+<li><p>Return the title and director of all films where the director<code>&#39;</code>s surname begins with C.</p>
+</li>
+<li><p>Return the number of stars, film Id (output as Film Id), and ratingdate of all movie ratings where the rating given is 4 or 5. Sort the output in descending order of the stars and then in ascending order of movie id.</p>
+</li>
+<li><p>Some reviewers didn<code>&#39;</code>t provide a date with their rating. Find the rID of all reviewers who have ratings with a NULL value for the date.</p>
+</li>
+<li><p>Return the number of films. Label the returned column Number of Films.</p>
+</li>
+<li><p>Return the number of reviewers. Label the returned column Number of Reviewers.</p>
+</li>
+<li><p>Return the number of ratings. Label the returned column Number of Ratings Provided.</p>
+</li>
+<li><p>Return the number of films per director. Label the returned column for the calculation - Number of Films.</p>
+</li>
+<li><p>Return the number of ratings left by each reviewer. Label the returned column for the calculation - Number of Reviews (per Reviewer).</p>
+</li>
+<li><p>Return the average number of film minutes per director. Label the returned column for the calculation <code>-</code> Average Number of Minutes per Film. The returned value is to be output as a whole number (no decimal places). </p>
+</li>
+</ol>
+
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+</html>

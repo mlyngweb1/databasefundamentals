@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+    </style>
+  </head>
+
+  <body>
+    
+    
+
+    <div class="ui fixed top pointing inverted stackable menu labmenu">
+      <header class="header item">
+        <i id="toc" class="sitemap icon"></i>
+        <a href="../index.html">
+          SQL 
+        </a>
+      </header>
+      <div class="right tab-menu menu">
+        
+          <a class="item" data-tab="Lab-01 SQL 7">
+            Lab-01 SQL 7
+          </a>
+        
+          <a class="item" data-tab="classicmodels Exercise">
+            classicmodels Exercise
+          </a>
+        
+        <div class="item">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="ui segment pushable">
+      <div class="ui inverted labeled icon left inline vertical sidebar menu">
+        <br><br>
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-a/index.html">
+              Lab-01 SQL 1
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-b/index.html">
+              Lab-01 SQL 2
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-c/index.html">
+              Lab-01 SQL 3
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-d/index.html">
+              Lab-01 SQL 4
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-e/index.html">
+              Lab-01 SQL 5
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-f/index.html">
+              Lab-01 SQL 6
+            </a>
+          
+        
+          
+            <a class="active item" href="../../topic-00-SQL/book-g/index.html">
+              Lab-01 SQL 7
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-h/index.html">
+              Lab-01 SQL 8
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-i/index.html">
+              Lab-01 SQL 9
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-00-SQL/book-j/index.html">
+              Lab-01 SQL 10
+            </a>
+          
+        
+      </div>
+      <div class="pusher" tabindex="-1">
+        <div class="ui basic segment" id="labchat">
+          <br>
+          
+            <div  class="ui tab segment lab" data-tab="Lab-01 SQL 7">
+              <h1>Objectives</h1>
+<p>In this lab you will practice using the JOIN clause with the SELECT statement on a new database</p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="classicmodels Exercise">
+              <h1>Exercise</h1>
+<ul>
+<li>Download and open the <a href="archives/classicmodels.zip">classicmodels</a> script (as an SQL file). </li>
+<li>The <em>classicmodels</em> database has 5 tables: <em>customer</em>, <em>productlines</em>, <em>product</em>, <em>orders</em>, and <em>orderdetails</em>.</li>
+<li>Open the SQL script in MySQL Workbench.</li>
+<li>Open a new tab and save it as Review JOIN Exercise. Enter (and execute) the following commands:</li>
+</ul>
+<pre><code>USE classicmodels; /*Select the Movies database*/</code></pre>
+<pre><code>SHOW TABLES; /*List all the tables*/</code></pre>
+<p>To do:</p>
+<ol>
+<li><p>Describe each table.</p>
+</li>
+<li><p>Return the customer name, contact name (concatenated) and phone number for all customers. Sort in alphabetical order of customer name.</p>
+</li>
+<li><p>Return the customer name, contact name (concatenated), addressLine1, addressLine2, city, state, and phone number for all customers from Ireland. Again sort in alphabetical order of customer name.</p>
+</li>
+<li><p>Return the customer name, order number and order date for all orders. Sort in alphabetical order of customer name and in descending order of order date.</p>
+</li>
+<li><p>Retrun the customer name and the number of orders made for each customer who has made an order. </p>
+</li>
+<li><p>Return the number of orders for customer (Baane Mini Imports). Label the output Number of Orders for Baane Mini Imports.</p>
+</li>
+<li><p>Return the order number for each order made by Baane Mini Imports. Return each order number once only. Sort in ascending order of order number.</p>
+</li>
+<li><p>Return the product name, description and product line for all products. Sort in alphabetical order of product name.</p>
+</li>
+<li><p>Return the product name, description, product line and text description for all products that include the term Chevrolet in the product name. Again, sort in alphabetical order of product name.</p>
+</li>
+<li><p>Return the product name and quantity ordered for all products identified by order number 10124. Again, sort in alphabetical order of product name.</p>
+</li>
+<li><p>Return the order number, product name and quantity ordered for all products ordered by customer Baane Mini Imports. Sort in ascending order of order number and then product name.</p>
+</li>
+<li><p>Return the customer name, order number and order date for all customers even if they have placed no orders. Sort in alphabetical order of customer name and in descending order of order date.</p>
+</li>
+</ol>
+
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+</html>
