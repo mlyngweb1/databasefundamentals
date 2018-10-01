@@ -16,75 +16,43 @@
     <style>
       
 
-body
-{
+body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
 }
 
-figcaption
-{
-  margin-bottom: 20px;
+p {
+  margin: 0.5em;
 }
 
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-code
-{
+pre code {
   font-family: "Monaco";
-  font-size: 110%;
+  font-size: 100%;
 }
 
-img
-{
-  padding:1px;
-  border:1px solid black;
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
 }
 
-h1
-{
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
   font-style:italic;
   font-size:130%;
-  border-bottom:thin solid black;
 }
 
-h2
-{
+h2 {
   font-size:110%;
-  border-bottom: thin solid black;
 }
 
-h3
-{
+h3 {
   font-size:100%;
-  border-bottom: thin solid black;
-}
-
-body
-{
-  overflow-y: scroll;
-}
-
-.pushable > .pusher
-{
-  padding-bottom: 1.5rem;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
 }
 
 
@@ -99,9 +67,9 @@ body
     <div class="ui fixed top pointing inverted stackable menu labmenu">
       <header class="header item">
         <i id="toc" class="sitemap icon"></i>
-        <a href="../index.html">
-          SQL 
-        </a>
+        
+          <a href="../index.html"> SQL  </a>
+        
       </header>
       <div class="right tab-menu menu">
         
@@ -113,9 +81,6 @@ body
             Movies Exercise
           </a>
         
-        <div class="item">
-          
-        </div>
       </div>
     </div>
 
@@ -144,42 +109,6 @@ body
           
             <a class="active item" href="../../topic-00-SQL/book-d/index.html">
               Lab-01 SQL 4
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic-00-SQL/book-e/index.html">
-              Lab-01 SQL 5
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic-00-SQL/book-f/index.html">
-              Lab-01 SQL 6
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic-00-SQL/book-g/index.html">
-              Lab-01 SQL 7
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic-00-SQL/book-h/index.html">
-              Lab-01 SQL 8
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic-00-SQL/book-i/index.html">
-              Lab-01 SQL 9
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic-00-SQL/book-j/index.html">
-              Lab-01 SQL 10
             </a>
           
         
@@ -241,24 +170,18 @@ body
     </div>
 
     <script>
-      $(document).on('keydown', function(e) {
-  e = e || window.event;
-  var nextTab;
-  switch (e.which || e.keyCode) {
-    case 37: // left
-      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-
-    case 39: // right
-      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-  }
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
 });
 
       $(document).ready(function() {
