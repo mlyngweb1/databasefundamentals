@@ -73,12 +73,16 @@ h3 {
       </header>
       <div class="right tab-menu menu">
         
-          <a class="item" data-tab="Lab-01 SQL 4">
-            Lab-01 SQL 4
+          <a class="item" data-tab="Lab-01 SQL 7">
+            Lab-01 SQL 7
           </a>
         
-          <a class="item" data-tab="Movies Exercise">
-            Movies Exercise
+          <a class="item" data-tab="classicmodels Exercise">
+            classicmodels Exercise
+          </a>
+        
+          <a class="item" data-tab="classicmodels Questions">
+            classicmodels Questions
           </a>
         
       </div>
@@ -107,7 +111,7 @@ h3 {
           
         
           
-            <a class="active item" href="../../topic-00-SQL/book-d/index.html">
+            <a class="item" href="../../topic-00-SQL/book-d/index.html">
               Lab-01 SQL 4
             </a>
           
@@ -125,7 +129,7 @@ h3 {
           
         
           
-            <a class="item" href="../../topic-00-SQL/book-g/index.html">
+            <a class="active item" href="../../topic-00-SQL/book-g/index.html">
               Lab-01 SQL 7
             </a>
           
@@ -135,49 +139,77 @@ h3 {
         <div class="ui basic segment" id="labchat">
           <br>
           
-            <div  class="ui tab segment lab" data-tab="Lab-01 SQL 4">
+            <div  class="ui tab segment lab" data-tab="Lab-01 SQL 7">
               <h1>Objectives</h1>
-<p>In this lab you will practice the SELECT statement on a new database</p>
+<p>In this lab you will practice using the JOIN clause with the SELECT statement on a new database</p>
 
             </div>
           
-            <div  class="ui tab segment lab" data-tab="Movies Exercise">
-              <h1>Exercise</h1>
+            <div  class="ui tab segment lab" data-tab="classicmodels Exercise">
+              <h1>Exercise Details</h1>
 <ul>
-<li>Download and open the <a href="archives/Movies.zip">Movie</a> script (as an SQL file). </li>
-<li>The <em>Movies</em> database has 3 tables: <em>film</em>, <em>reviewer</em>, and <em>rating</em>.</li>
-<li>Open the SQL script in MySQL Workbench.</li>
-<li>Open a new tab and save it as Review Exercise. Enter (and execute) the following commands:</li>
+<li>Download and open the <a href="archives/classicmodels.zip">classicmodels</a> script (as an SQL file). </li>
+<li>The <em>classicmodels</em> database has 5 tables: <em>customer</em>, <em>productlines</em>, <em>product</em>, <em>orders</em>, and <em>orderdetails</em>.</li>
+<li>Before you attempt the exercises, look at each table to see it’s definition (structure) and identify which tables have foreign keys.</li>
 </ul>
-<pre><code>USE MOVIES; /*Select the Movies database*/</code></pre>
+<pre><code>customer(customerNumber, customerName, contactLastName, contactFirstName, phone, addressLine1, addressLine2, city, state, postalCode, country, creditLimit)
+PRIMARY KEY customerNumber
+
+productlines(productLine, textDescription, htmlDescription, image)
+PRIMARY KEY productLine 
+
+product(productCode, productName, productLine, productScale, productVendor,
+productDescription, quantityInStock, buyPrice, MSRP)
+PRIMARY KEY productCode  
+FOREIGN KEY productLine  REFERENCES  productlines(productLine)
+
+orders( orderNumber, orderDate, requiredDate, shippedDate, status, comments customerNumber)
+PRIMARY KEY orderNumber 
+FOREIGN KEY customerNumber  REFERENCES  customer  (customerNumber)
+
+orderdetails(orderNumber, productCode, quantityOrdered, priceEach, orderLineNumber)
+PRIMARY KEY orderNumber , productCode
+FOREIGN KEY orderNumber  REFERENCES  orders(orderNumber)
+FOREIGN KEY productCode REFERENCES  product  (productCode)</code></pre>
+<ul>
+<li>Open the SQL script in MySQL Workbench.</li>
+<li>Open a new tab and save it as Review JOIN Exercise. </li>
+</ul>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="classicmodels Questions">
+              <h1>Exercise Questions</h1>
+<ul>
+<li>Enter (and execute) the following commands:</li>
+</ul>
+<pre><code>USE classicmodels; /*Select the Classicmodels database*/</code></pre>
 <pre><code>SHOW TABLES; /*List all the tables*/</code></pre>
 <p>To do:</p>
 <ol>
 <li><p>Describe each table.</p>
 </li>
-<li><p>Find the titles of all films directed by Steven Spielberg.</p>
+<li><p>Return the customer name, contact name (concatenated) and phone number for all customers. Sort in alphabetical order of customer name.</p>
 </li>
-<li><p>Return the title and year of all films produced from 1940 to 1990. Sort by title.</p>
+<li><p>Return the customer name, contact name (concatenated), addressLine1, addressLine2, city, state, and phone number for all customers from Ireland. Again sort in alphabetical order of customer name.</p>
 </li>
-<li><p>Return the title and length of all films whose length is 110 minutes or more. Sort by title.</p>
+<li><p>Return the customer name, order number and order date for all orders. Sort in alphabetical order of customer name and in descending order of order date.</p>
 </li>
-<li><p>Return the title and director of all films where the director<code>&#39;</code>s surname begins with C.</p>
+<li><p>Retrun the customer name and the number of orders made for each customer who has made an order. </p>
 </li>
-<li><p>Return the number of stars, film Id (output as Film Id), and ratingdate of all movie ratings where the rating given is 4 or 5. Sort the output in descending order of the stars and then in ascending order of movie id.</p>
+<li><p>Return the number of orders for customer (Baane Mini Imports). Label the output Number of Orders for Baane Mini Imports.</p>
 </li>
-<li><p>Some reviewers didn<code>&#39;</code>t provide a date with their rating. Find the rID of all reviewers who have ratings with a NULL value for the date.</p>
+<li><p>Return the order number for each order made by Baane Mini Imports. Return each order number once only. Sort in ascending order of order number.</p>
 </li>
-<li><p>Return the number of films. Label the returned column Number of Films.</p>
+<li><p>Return the product name, description and product line for all products. Sort in alphabetical order of product name.</p>
 </li>
-<li><p>Return the number of reviewers. Label the returned column Number of Reviewers.</p>
+<li><p>Return the product name, description, product line and text description for all products that include the term Chevrolet in the product name. Again, sort in alphabetical order of product name.</p>
 </li>
-<li><p>Return the number of ratings. Label the returned column Number of Ratings Provided.</p>
+<li><p>Return the product name and quantity ordered for all products identified by order number 10124. Again, sort in alphabetical order of product name.</p>
 </li>
-<li><p>Return the number of films per director. Label the returned column for the calculation - Number of Films.</p>
+<li><p>Return the order number, product name and quantity ordered for all products ordered by customer Baane Mini Imports. Sort in ascending order of order number and then product name.</p>
 </li>
-<li><p>Return the number of ratings left by each reviewer. Label the returned column for the calculation - Number of Reviews (per Reviewer).</p>
-</li>
-<li><p>Return the average number of film minutes per director. Label the returned column for the calculation <code>-</code> Average Number of Minutes per Film. The returned value is to be output as a whole number (no decimal places). </p>
+<li><p>Return the customer name, order number and order date for all customers even if they have placed no orders. Sort in alphabetical order of customer name and in descending order of order date.</p>
 </li>
 </ol>
 
