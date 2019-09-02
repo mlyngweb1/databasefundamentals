@@ -1,0 +1,65 @@
+
+
+
+  {
+  
+  
+    "properties" : {},
+  
+  "type" : "lab",
+  "title" : " SQL 1",
+  "img" : "img/main.png",
+  "videoid" : "none",
+  "objectives" : "<p>In this lab you will learn about the basics of SQL and are introduced to the SELECT statement.</p>",
+  "folder" : "book-a",
+  "link" : "index.html",
+  "los": [
+   ]
+,
+  "chapters" : [
+  
+    {
+    "title": "#Objectives",
+    "shortTitle": " SQL 1",
+    "contentMd" : "#Objectives\r\n\r\nIn this lab you will learn about the basics of SQL and are introduced to the SELECT statement.\r\n\r\n- Understand what SQL is\r\n- Understand a database table is\r\n- Describe a table structure\r\n- Select statement syntax\r\n- Retrieve all records in a table\r\n"
+    },
+  
+    {
+    "title": "#What is SQL?",
+    "shortTitle": "01",
+    "contentMd" : "#What is SQL?\r\n\r\nSQL (sometimes pronounced SEQUEL) stands for Structured Query Language. SQL is used to communicate with a database. According to ANSI (American National Standards Institute), it is the standard language for relational database management systems. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database. Some common relational database management systems that use SQL are: Oracle, Sybase, Microsoft SQL Server, Access, Ingres, etc. Although most database systems use SQL, most of them also have their own additional proprietary extensions that are usually only used on their system. However, the standard SQL commands such as \"Select\", \"Insert\", \"Update\", \"Delete\", \"Create\", and \"Drop\" can be used to accomplish almost everything that one needs to do with a database.\r\n\r\n## Table Basics\r\n\r\nA relational database system contains one or more objects called *tables*. The data or information for the database are stored in these tables. \r\nTables are uniquely identified by their *name* and are comprised of *columns* and *rows*. Columns contain the column name, data type, and any other attributes \r\nfor the column. Rows contain the records or data for the columns. Here is a sample table called \"weather\".\r\nThe values city, state, high, and low are the columns. The rows contain the data for this table:\r\n\r\n![](img/table.png)"
+    },
+  
+    {
+    "title": "# Our example - Library system",
+    "shortTitle": "02",
+    "contentMd" : "# Our example - Library system\r\n\r\nWe have built a [library database](archives/library.zip) with the following tables: *book*, *bookcopy*, *student*, *loan*, *author* and *authorship*. \r\n\r\nThe tables are populated and we will use this data in our queries. The schema is stored in **library_script.sql**.\r\n\r\n- Open *MySQL Workbench* and log in using password root. \r\n\r\nTo run the script:\r\n\r\n- Under the *File* menu, choose *Run SQL Script …*. \r\n- When the dialog box opens, select *library_script.sql*. \r\n- Click the button *Open* and on the next dialog box, click *Run*.  \r\n- When the Operation has run successfully, click Close.\r\n\r\nAlternatively:\r\n\r\n- Choose *Open SQL Script …*. \r\n- When the dialog box opens, select *library_script.sql*. \r\n- Click the button *Open*. This will open the script in a new tab. \r\n- To execute the script, choose the third option on the window.  \r\n\r\n![](img/dialog.png)\r\n\r\n"
+    },
+  
+    {
+    "title": "#Describing Data",
+    "shortTitle": "03",
+    "contentMd" : "#Describing Data\r\n\r\nBefore you work with a database you must specify the database (by name) that you want to work with. \r\n\r\nEnter the following command:\r\n\r\n~~~\r\nUSE LIBRARY;\r\n~~~\r\n\r\nWe have already set up tables for our library system. If you want to see their structure, use:\r\n~~~\r\nDESCRIBE 'tablename'; \r\n~~~\r\nOr\r\n~~~\r\nDESC 'tablename';\r\n~~~\r\n\r\n##Example\r\n~~~\r\nDESC book;\r\n~~~\r\n\r\nThis will return a description of the *book* table including field names and their corresponding data types.\r\n## To Do:\r\n\r\nNow, describe the other tables.\r\n\r\n"
+    },
+  
+    {
+    "title": "#The SELECT statement",
+    "shortTitle": "04",
+    "contentMd" : "#The SELECT statement\r\n\r\n<style>\r\ntable.mine {\r\n    border-collapse:collapse;\r\n    border: 1px solid black;\r\n    width:50%;\r\n}\r\n\r\ntd.mine2 {\r\n    border: 1px solid black;\r\n    padding: 0.2em;\r\n}\r\n</style>\r\n\r\nThe select statement is used to query the database and retrieve selected data that match the criteria that you specify. \r\nThe data returned is stored in a result table, called the *result-set*. Here is the format of a simple select statement:\r\n\r\n~~~\r\n  SELECT [DISTINCT|ALL]{*|[columnExpression [AS newName]][,...]}\r\n  FROM Tablename [alias] \r\n  [JOIN Tablename ON ...]\r\n  [WHERE condition]\r\n  [GROUP BY columnlist][HAVING condition]\r\n  [ORDER BY columnList];\r\n~~~\r\n  \r\n*Note:* [] = optional\r\n\r\n- *columnExpression* represents a column name or an expression.\r\n- *TableName* is the name of an existing database table or view that you have access to, and *alias* is an optional abbreviation for *TableName*.\r\n- The sequence of processing in a SELECCT statement is:\r\n\r\n<table class=\"mine\">\r\n<tr><td class = \"mine2\" >SELECT</td><td class = \"mine2\" >specifies which columns are to appear in the output</td></tr>\r\n<tr><td class = \"mine2\" >FROM</td><td class = \"mine2\" >specifies the table to be used</td></tr>\r\n<tr><td class = \"mine2\" >JOIN</td><td class = \"mine2\" >specifies the table(s) to be joined with the table in the FROM</td></tr>\r\n<tr><td class = \"mine2\" >WHERE</td><td class = \"mine2\" >filters the rows subject to some condition(s)</td></tr>\r\n<tr><td class = \"mine2\" >GROUP BY</td><td class = \"mine2\" >forms groups of rows with the same column name</td></tr>\r\n<tr><td class = \"mine2\" >HAVING</td><td class = \"mine2\" >filters the groups subject to some condition(s)</td></tr>\r\n<tr><td class = \"mine2\" >ORDER BY</td><td class = \"mine2\" >specifies the order of the output</td></tr>\r\n</table>\r\nThe order of the clauses in the SELECT statement **cannot** be changed.The only two mandatory  clauses are the first two: SELECT and FROM; the remainder\r\nare optional.\r\n\r\n"
+    },
+  
+    {
+    "title": "#Simple Select examples",
+    "shortTitle": "05",
+    "contentMd" : "#Simple Select examples\r\n\r\n<style>\r\ntable.mine {\r\n    border-collapse:collapse;\r\n    border: 1px solid black;\r\n    width:30%;\r\n}\r\n\r\ntd.mine2 {\r\n    border: 1px solid black;\r\n    padding: 0.2em;\r\n}\r\n</style>\r\n\r\nAs we know, the select statement is used to query the database and retrieve selected data that match the criteria that you specify.\r\n\r\nConditional selections used in the where clause:\r\n\r\n<table class=\"mine\">\r\n<tr><td class = \"mine2\" >=</td><td class = \"mine2\" >Equal</td></tr>\r\n<tr><td class = \"mine2\" >></td><td class = \"mine2\" >Greater than</td></tr>\r\n<tr><td class = \"mine2\" ><</td><td class = \"mine2\" >Less than</td></tr>\r\n<tr><td class = \"mine2\" >>=</td><td class = \"mine2\" >Greater than or equal</td></tr>\r\n<tr><td class = \"mine2\" ><=</td><td class = \"mine2\" >Less than or equal</td></tr>\r\n<tr><td class = \"mine2\" ><></td><td class = \"mine2\" >Not equal</td></tr>\r\n<tr><td class = \"mine2\" >!=</td><td class = \"mine2\" >Not equal</td></tr>\r\n</table>\r\n\r\n## Examples\r\n\r\n~~~\r\nSELECT * FROM book; \r\n~~~\r\n\r\nThis will return all records with all columns included.\r\n\r\n~~~\r\nSELECT title, publisher FROM book; \r\n~~~\r\n\r\nThis will return a subset of columns. This query will return all records with just 2 columns (title and publisher) included.\r\n\r\n~~~\r\nSELECT title FROM book WHERE publisher = 'Addison Wesley'; \r\n~~~\r\nThis will return a subset of records only. Records will only be selected if the publisher value is equal to Addison Wesley. When these records are selected (in memory) the column title is then returned.\r\n\r\n###Practice: Try out all the examples yourself\r\n\r\nEnter the following sample select statements, one at a time to see what is returned:\r\n~~~\r\nSELECT * FROM student; \r\nSELECT fname, lname FROM student; \r\nSELECT * FROM student WHERE county = 'Waterford'; \r\n~~~\r\n\r\n##Exercises\r\n\r\n 1. Display the full name and full address for every student that's in the table.\r\n \r\n ![](img/ans1.png) \r\n\r\n 2. Display the first name, last name, and county for everyone that's not from Waterford.\r\n \r\n ![](img/ans2.png) \r\n\r\n 3. Display all columns for every student that is in first year.\r\n \r\n ![](img/ans3.png)\r\n"
+    },
+  
+    {
+    "title": "# More on Select",
+    "shortTitle": "06",
+    "contentMd" : "# More on Select\r\n\r\nTo change the column heading returned, we can use *AS*:\r\n~~~\r\nSELECT fname AS 'First Name', lname AS 'Last Name' FROM student;\r\n~~~\r\nOR\r\n~~~\r\nSELECT fname 'First Name', lname 'Last Name' FROM student;\r\n~~~\r\n\r\nTo concatenate (join) two (or more) columns together use CONCAT as follows:\r\n~~~\r\nSELECT concat(fname, ' ', lname) AS Name FROM Student;\r\n~~~\r\n\r\nThe result of concatenating two character strings is another character string. With the concat feature, we are usually joining fieldnames and \r\nseparation characters (such as a hyphen (`-`) or a colon (:) or a space ( )). Use a comma to separate each element.\r\n\r\n\r\n## Distinct\r\n\r\nEnter the following:\r\n\r\n~~~\r\nSELECT publisher FROM book; \r\n~~~\r\n\r\nThis returns the publisher for each book record, so you will see values repeated. But if we only want to know the list of publishers that we are using at \r\nany one time, we do not want to see for example *Addison Wesley* more than once.\r\n\r\nTo eliminate duplicates, use  the keyword **DISTINCT**. Now enter the following:\r\n\r\n~~~\r\nSELECT DISTINCT publisher FROM book; \r\n~~~\r\n\r\nNotice the difference in the number of returned values.\r\n\r\n## Exercises\r\n\r\n 1. Display the title of all books that are categorised as Computing. Output the result as Computing Titles.\r\n \r\n ![](img/ans4.png) \r\n \r\n 2. Display the counties that the students come from. Output the result as Student County. List each county only once.\r\n \r\n ![](img/ans5.png) \r\n \r\n 3. Display the student id, first name and last name for all students that are on course wd155. Concatenate first name and last name together and output the value as Student Name.\r\n\r\n ![](img/ans6.png) \r\n \r\n 4. Return the first name, last name and Street for all Students from Tramore. Output the student name concatenated and labelled as Name.\r\n \r\n ![](img/ans7.png) \r\n\r\n 5. Retrieve the titles of all books published by Sitepoint. Label the returned titles as 'Sitepoint books'.\r\n\r\n ![](img/ans8.png) \r\n"
+    }
+  
+  ]
+  }
+

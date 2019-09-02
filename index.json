@@ -1,0 +1,69 @@
+
+
+
+  {
+  
+  
+    "properties" : {},
+  
+  "type" : "course",
+  "title" : " SQL ",
+  "img" : "",
+  "videoid" : "",
+  "objectives" : "<p>A short description of the course. Normally this will not be visible, unless the course is aggregated into a portfolio of modules</p>",
+  "folder" : "DatabaseFundamentals-source",
+  "link" : "index.html",
+  "los": [
+   ]
+,
+  "topics" : [  {
+    
+  
+    "properties" : {},
+  
+  "type" : "topic",
+  "title" : "SQL - Week 1 ",
+  "img" : "topic.jpg",
+  "videoid" : "",
+  "objectives" : "<p>In this section you will learn the basics of using MySQL Workbench and are introduced to the SELECT statement.</p>",
+  "folder" : "topic-00-Select",
+  "link" : "index.html",
+  "los": [
+   {
+    
+  
+    "properties" : {},
+  
+  "type" : "talk",
+  "title" : " SQL - Week 1 ",
+  "img" : "SQL-1.png",
+  "videoid" : "none",
+  "objectives" : "<p>In this lecture you will be introduced to the SQL Select statement.</p>",
+  "folder" : "talk-1",
+  "link" : "SQL-1.pdf",
+  "los": [
+   ]
+
+    } ,
+   {
+    
+  
+    "properties" : {},
+  
+  "type" : "lab",
+  "title" : " SQL 1",
+  "img" : "img/main.png",
+  "videoid" : "none",
+  "objectives" : "<p>In this lab you will learn about the basics of SQL and are introduced to the SELECT statement.</p>",
+  "folder" : "book-a",
+  "link" : "index.html",
+  "los": [
+   ]
+
+    } 
+   ]
+
+  }
+ ]
+  }
+
